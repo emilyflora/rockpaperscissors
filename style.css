@@ -1,6 +1,73 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-size: 14px;
+    color: rgb(35, 53, 93);
     text-align: center;
-    background-color: black;
+    background-color: rgb(133, 190, 204);
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+button {
+    background-color: rgb(35, 53, 93);
+    border: 0;
+    color: white;
+    margin: 10px;
+    padding: 20px 40px;
+}
+
+button:active {
+    background-color: rgb(56, 79, 128);
+}
+
+div {
+
+}
+
+.blockElement {
+    padding: 20px;
+    margin: 30px 500px;
+    background-color: #fff;
+    border: 2px solid rgb(35, 53, 93);
+}
+
+.resultsContainer {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.resultsCard {
+    border: 2px solid rgb(35, 53, 93);
+    margin: 0 40px;
+}
+
+.resultsElement {
+    padding: 20px;
+}
+
+.top {
+    background-color: rgb(35, 53, 93);
+    color: #fff;
+    border-bottom: 2px solid rgb(35, 53, 93);
+}
+
+.bottom {
+    background-color: #fff;
+}
+
+.moveContainer {
+    padding: 20px;
+    background-color: rgb(35, 53, 93);
+    color: #fff;
+    margin: 20px 40px 0 40px;
+    border: 2px solid rgb(35, 53, 93);
 }

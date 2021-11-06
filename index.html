@@ -8,16 +8,31 @@
         </title>
     </head>
     <body>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-
-        <div id="results"></div>
-        <div id="points">
-            <span id="player"></span>
-            <span id="computer"></span>
-        </div>
-
+            <div class="blockElement">
+                <h1>Rock Paper Scissors</h1>
+                <p>You vs. the computer. First to 5 wins!</p>
+            </div>
+            <div class="blockElement">
+                <h2>Choose your move</h2>
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </div>
+            <div class="blockElement">
+                <div class="resultsContainer">
+                    <div class="resultsCard">
+                        <div class="resultsElement top">You</div>
+                        <div class="resultsElement bottom" id="player">0</div>
+                    </div>
+                    <div class="resultsCard">
+                        <div class="resultsElement top">Computer</div>     
+                        <div class="resultsElement bottom" id="computer">0</div>
+                    </div>
+                </div>
+                <div class="moveContainer" id="results">
+                    Who will win?
+                </div>
+            </div>
         <script src="script.js"></script>
     </body>
 </html>
