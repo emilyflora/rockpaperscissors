@@ -1,13 +1,13 @@
 let playerPoints=0;
 let computerPoints=0;
 
-var rock = document.querySelector("#rock");
-var paper = document.querySelector("#paper");
-var scissors = document.querySelector("#scissors");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
-rock.addEventListener("click", playRound);
-paper.addEventListener("click", playRound);
-scissors.addEventListener("click", playRound);
+rock.addEventListener("click", game);
+paper.addEventListener("click", game);
+scissors.addEventListener("click", game);
 
 function computerPlay(){
     const options = ['rock', 'paper', 'scissors'];
@@ -20,12 +20,11 @@ function playRound(e){
     console.log(computerSelection);
     let playerSelection = e.target.id;
     console.log(playerSelection);
-
     if 
         (playerSelection == computerSelection) {
             document.getElementById("results").innerHTML = "It's a tie!";
-            // document.getElementById("player").innerHTML = playerPoints;
-            // document.getElementById("computer").innerHTML = computerPoints;
+            document.getElementById("player").innerHTML = playerPoints;
+            document.getElementById("computer").innerHTML = computerPoints;
         }
     else if 
         ((playerSelection == "rock" && computerSelection == "scissors") || 
@@ -33,26 +32,24 @@ function playRound(e){
         (playerSelection == "scissors" && computerSelection == "paper")) {
             document.getElementById("results").innerHTML = "Nice, " + playerSelection + " beats " + computerSelection + ".";
             playerPoints++;
-            // document.getElementById("player").innerHTML = playerPoints;
-            // document.getElementById("computer").innerHTML = computerPoints;
+            document.getElementById("player").innerHTML = playerPoints;
+            document.getElementById("computer").innerHTML = computerPoints;
         }
     else {
             document.getElementById("results").innerHTML = "Sorry, " + computerSelection + " beats " + playerSelection + ".";
             computerPoints++;
-            // document.getElementById("player").innerHTML = playerPoints;
-            // document.getElementById("computer").innerHTML = computerPoints;
+            document.getElementById("player").innerHTML = playerPoints;
+            document.getElementById("computer").innerHTML = computerPoints;
     }};
 
-// function game() {
-//     while (playerPoints<=4&&computerPoints<=4){
-//         playRound();
-//     }
-//     if (playerPoints == 5) {
-//         return("You win! Refresh to play again.");
-//     }
-//     else {
-//         return("You lose! Refresh to play again.");
-//     }
-// }
-
-// game();
+function game(e) {
+    if (playerPoints<=4&&computerPoints<=4){
+        playRound(e);
+    }
+    else if (playerPoints == 5) {
+        document.getElementById("results").innerHTML = "You win! Refresh to play again.";
+    }
+    else {
+        document.getElementById("results").innerHTML = "You lose! Refresh to play again.";
+    }
+};
