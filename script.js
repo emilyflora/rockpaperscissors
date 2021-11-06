@@ -9,11 +9,10 @@ rock.addEventListener("click", playRound);
 paper.addEventListener("click", playRound);
 scissors.addEventListener("click", playRound);
 
-
 function computerPlay(){
     const options = ['rock', 'paper', 'scissors'];
     return options[Math.floor(Math.random() * options.length)];
-}
+};
 
 function playRound(e){
     computerPlay();
@@ -21,37 +20,22 @@ function playRound(e){
     console.log(computerSelection);
     let playerSelection = e.target.id;
     console.log(playerSelection);
-    if (playerSelection == "rock") {
-        switch(computerSelection) {
-            case "rock": console.log("It's a tie!");
-                break;
-            case "paper": computerPoints++; 
-            console.log("You lose! Paper beats rock."); 
-                break;
-            case "scissors": playerPoints++;
-            console.log("You win! Rock beats scissors.");
-                break;}}
-    else if (playerSelection == "paper") {
-        switch(computerSelection) {
-            case "rock": playerPoints++;
-            console.log("You win! Paper beats rock.");
-                break;
-            case "paper": console.log("It's a tie!");
-                break;
-            case "scissors": computerPoints++;
-            console.log("You lose! Scissors beats paper.");
-                break;}}
+
+    if 
+        (playerSelection == computerSelection) {
+            document.getElementById("results").innerHTML = "It's a tie!";}
+    else if 
+        ((playerSelection == "rock" && computerSelection == "scissors") || 
+        (playerSelection == "paper" && computerSelection == "rock") ||
+        (playerSelection == "scissors" && computerSelection == "paper")) {
+            document.getElementById("results").innerHTML = "Nice, " + playerSelection + " beats " + computerSelection + ".";
+            playerPoints++;
+        }
     else {
-        switch(computerSelection) {
-            case "rock": computerPoints++; 
-            console.log("You lose! Rock beats scissors.");
-                break;
-            case "paper": playerPoints++; 
-            console.log("You win! Scissors beats paper.");
-                break;
-            case "scissors": console.log("It's a tie!");
-                break;}}
-}
+            document.getElementById("results").innerHTML = "Sorry, " + computerSelection + " beats " + playerSelection + ".";
+            computerPoints++;
+    }};
+
 
 // function game() {
 //     while (playerPoints<=4&&computerPoints<=4){
