@@ -32,19 +32,19 @@ function playRound(e){
     else {
             document.getElementById("results").innerHTML = "Sorry, " + computerSelection + " beats " + playerSelection + ".";
             computerPoints++;
-    }
+    };
     document.getElementById("player").innerHTML = playerPoints;
     document.getElementById("computer").innerHTML = computerPoints;
+    if (playerPoints == 5) {
+        document.getElementById("results").innerHTML = "You win! Refresh to play again.";
+        }
+    else if (computerPoints == 5) {
+      document.getElementById("results").innerHTML = "You lose! Refresh to play again.";
+    };
 };
 
 function game(e) {
     if (playerPoints<=4&&computerPoints<=4){
         playRound(e);
-    }
-    else if (playerPoints == 5) {
-        document.getElementById("results").innerHTML = "You win! Refresh to play again.";
-    }
-    else {
-        document.getElementById("results").innerHTML = "You lose! Refresh to play again.";
     }
 };
